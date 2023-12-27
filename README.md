@@ -101,39 +101,29 @@ cargo test
 
 ## Contributing
 
-Thanks for your interest in the project. You can fork the repo, create a branch with a descriptive name (maybe the issue number and a word or two to describe it) and submit a pull request to the `dev` branch of this repo.
+Fork the Repository: Click on the "Fork" button on the repository's page. This will create a copy of the repository in your GitHub account.
 
-### Branches
+Clone the Repository: Use  to clone the forked repository to your local machine.git clone <URL>
 
-We have 2 active branches,
+Create a Branch: Use  to create a new branch where you'll work on your changes. The branch name should be descriptive, such as including the issue number or a brief description of the changes you're making.git checkout -b <branch-name>
 
-1. `dev` This is where new development happens. All pull requests should be made to this branch.
-2. `main` This is for cloning and running starklings. `dev` is merged into `main` after a second set of testing.
+Make Changes: Add new exercises in the  directory and update information about the exercise in the  file or as per the specified instructions../exercises./info.toml
 
-### Adding new exercises
+Commit Changes: After making changes, use  to stage the changes and then  to commit them to your local branch.git add .git commit -m "Descriptive message"
 
-1. New exercises can be added in `./exercises` directory.
-2. Insert information about the exercise in `./info.toml` file. For example
-    ```toml
-    [[exercises]]
-    name = "new_exercise"
-    path = "exercises/new_module/new_exercise.cairo"
-    mode = "compile" # or "test"
-    hint = """"""
-    ```
-3. Check that the [tests](#testing) pass.
-4. Send your PR to `dev` branch of the repo!
+Push Changes: Push your branch with changes to your forked repository using .git push origin <branch-name>
 
-### Updating Rust logic/Cairo version
+Create Pull Request (PR): Visit your forked repository on GitHub. GitHub will usually provide a prompt to create a pull request from your branch. Select the base repository's  branch as the target for the pull request.dev
 
-1. [Test](#testing) your changes.
-2. Make sure you have solutions to all the exercises in `./solutions` directory.
-3. Run `cargo run --bin starklings compile_solutions` to confirm all exercise solutions still compile.
-4. Make a pull requests to `dev` branch of the repo!
+Describe Changes: In the pull request, provide a clear and concise description of the changes you've made. Reference any related issue numbers if applicable.
 
-### Merging `dev` into `main` (maintainers)
+Submit PR: Once you've reviewed your changes and provided necessary information, submit the pull request.
 
-1. Create a PR from `dev` branch to `master` branch.
-2. Run all tests, and check solutions with `cargo run --bin starklings compile_solutions`.
-3. Check to make sure no new changes were merged into `dev` since the PR was created.
-4. If everything makes sense, merge away!
+Merge PR: The project maintainers will review your changes, suggest improvements if needed, and eventually merge your changes into the  branch after thorough testing.dev
+
+Remember, it's essential to follow any specific contribution guidelines provided by the project. Additionally, keep communication open—engage with maintainers or contributors for guidance or assistance if required.
+
+Always ensure your local repository stays updated with the upstream repository to avoid conflicts. Use  and  (if  is the name of the original repository) to keep your forked repository in sync.git fetch upstreamgit merge upstream/devupstream
+
+Lastly, be patient during the review process; it might take some time for maintainers to go through and merge contributions.
+
